@@ -1,0 +1,387 @@
+classDiagram
+    %% Core Classes and Interfaces
+    class Person {
+        -string id
+        -string name
+        -string email
+        -string phone
+        -DateTime dateOfBirth
+        -string address
+        +string Id
+        +string Name
+        +string Email
+        +string Phone
+        +DateTime DateOfBirth
+        +string Address
+        +int CalculateAge()
+    }
+
+    class Employee {
+        -string employeeId
+        -DateTime hireDate
+        -string position
+        -decimal baseSalary
+        -string departmentId
+        -EmployeeStatus status
+        +string EmployeeId
+        +DateTime HireDate
+        +string Position
+        +decimal BaseSalary
+        +string DepartmentId
+        +EmployeeStatus Status
+        +Department Department
+        +int CalculateYearsOfService()
+        +virtual decimal CalculateSalary()
+    }
+
+    class FullTimeEmployee {
+        -decimal annualBonus
+        +decimal AnnualBonus
+        +override decimal CalculateSalary()
+    }
+
+    class ContractEmployee {
+        -decimal hourlyRate
+        -int hoursWorked
+        +decimal HourlyRate
+        +int HoursWorked
+        +override decimal CalculateSalary()
+    }
+
+    class Manager {
+        -List~string~ managedEmployeeIds
+        -decimal budgetResponsibility
+        +List~string~ ManagedEmployeeIds
+        +decimal BudgetResponsibility
+        +void ApproveLeaveRequest(LeaveRequest request)
+        +void RejectLeaveRequest(LeaveRequest request)
+    }
+
+    class Department {
+        -string departmentId
+        -string name
+        -string description
+        -decimal budget
+        -string managerId
+        +string DepartmentId
+        +string Name
+        +string Description
+        +decimal Budget
+        +string ManagerId
+        +List~Employee~ Employees
+        +Employee Manager
+        +int GetEmployeeCount()
+        +decimal GetBudgetUtilization()
+    }
+
+    class Attendance {
+        -string attendanceId
+        -string employeeId
+        -DateTime date
+        -DateTime clockInTime
+        -DateTime clockOutTime
+        -AttendanceStatus status
+        +string AttendanceId
+        +string EmployeeId
+        +DateTime Date
+        +DateTime ClockInTime
+        +DateTime ClockOutTime
+        +AttendanceStatus Status
+        +Employee Employee
+        +TimeSpan CalculateWorkHours()
+        +bool IsLate()
+    }
+
+    class Leave {
+        -string leaveId
+        -string employeeId
+        -DateTime startDate
+        -DateTime endDate
+        -LeaveType type
+        -LeaveStatus status
+        -string remarks
+        +string LeaveId
+        +string EmployeeId
+        +DateTime StartDate
+        +DateTime EndDate
+        +LeaveType Type
+        +LeaveStatus Status
+        +string Remarks
+        +Employee Employee
+        +int CalculateDays()
+    }
+
+    class LeaveRequest {
+        -string requestId
+        -string employeeId
+        -DateTime requestDate
+        -Leave leaveDetails
+        -string approverId
+        +string RequestId
+        +string EmployeeId
+        +DateTime RequestDate
+        +Leave LeaveDetails
+        +string ApproverId
+        +void Submit()
+        +void Cancel()
+    }
+
+    class Payroll {
+        -string payrollId
+        -string employeeId
+        -DateTime payPeriodStart
+        -DateTime payPeriodEnd
+        -decimal baseSalary
+        -decimal allowances
+        -decimal deductions
+        -decimal netSalary
+        -bool isPaid
+        +string PayrollId
+        +string EmployeeId
+        +DateTime PayPeriodStart
+        +DateTime PayPeriodEnd
+        +decimal BaseSalary
+        +decimal Allowances
+        +decimal Deductions
+        +decimal NetSalary
+        +bool IsPaid
+        +Employee Employee
+        +void CalculateNetSalary()
+        +void GeneratePayslip()
+    }
+
+    class UserRole {
+        <<enumeration>>
+        Administrator
+        Manager
+        Employee
+    }
+
+    class RoleSelectionService {
+        -UserRole currentRole
+        +UserRole CurrentRole
+        +void SwitchRole(UserRole newRole)
+        +bool CanAccessFeature(string featureName)
+        +event RoleChangedEventHandler RoleChanged
+        #void OnRoleChanged(RoleChangedEventArgs e)
+    }
+
+    %% Enumerations
+    class EmployeeStatus {
+        <<enumeration>>
+        Active
+        OnLeave
+        Terminated
+        Suspended
+    }
+
+    class LeaveType {
+        <<enumeration>>
+        Annual
+        Sick
+        Maternity
+        Paternity
+        Unpaid
+        Bereavement
+    }
+
+    class LeaveStatus {
+        <<enumeration>>
+        Pending
+        Approved
+        Rejected
+        Cancelled
+    }
+
+    class AttendanceStatus {
+        <<enumeration>>
+        Present
+        Absent
+        HalfDay
+        WorkFromHome
+    }
+
+    %% Factory Pattern
+    class EmployeeFactory {
+        +Employee CreateEmployee(string type)
+        +FullTimeEmployee CreateFullTimeEmployee()
+        +ContractEmployee CreateContractEmployee()
+        +Manager CreateManager()
+    }
+
+    %% Service Interfaces
+    class IService {
+        <<interface>>
+        +List GetAll()
+        +GetById(string id)
+        +bool Add(entity)
+        +bool Update(entity)
+        +bool Delete(string id)
+    }
+
+    class IFileStorage {
+        <<interface>>
+        +bool SaveData(string filename, data)
+        +LoadData(string filename)
+    }
+
+    %% Custom Exceptions
+    class HRSystemException {
+        +string Message
+        +DateTime Timestamp
+        +HRSystemException(string message)
+    }
+
+    class EntityNotFoundException {
+        +string EntityId
+        +string EntityType
+        +EntityNotFoundException(string entityType, string entityId)
+    }
+
+    class ValidationException {
+        +List~string~ ValidationErrors
+        +ValidationException(List~string~ errors)
+    }
+
+    %% Service Implementations
+    class EmployeeService {
+        -List~Employee~ employees
+        -FileManager fileManager
+        -EmployeeFactory employeeFactory
+        +EmployeeService(FileManager fileManager, EmployeeFactory factory)
+        +List~Employee~ GetAll()
+        +Employee GetById(string id)
+        +bool Add(Employee employee)
+        +bool Update(Employee employee)
+        +bool Delete(string id)
+        +List~Employee~ FindByDepartment(string departmentId)
+        +event EmployeeAddedEventHandler EmployeeAdded
+        -bool SaveChanges()
+        #void OnEmployeeAdded(EmployeeEventArgs e)
+    }
+
+    class DepartmentService {
+        -List~Department~ departments
+        -FileManager fileManager
+        +DepartmentService(FileManager fileManager)
+        +List~Department~ GetAll()
+        +Department GetById(string id)
+        +bool Add(Department department)
+        +bool Update(Department department)
+        +bool Delete(string id)
+        +Department GetByManager(string managerId)
+        -bool SaveChanges()
+    }
+
+    class AttendanceService {
+        -List~Attendance~ attendances
+        -FileManager fileManager
+        +AttendanceService(FileManager fileManager)
+        +List~Attendance~ GetAll()
+        +Attendance GetById(string id)
+        +bool Add(Attendance attendance)
+        +bool Update(Attendance attendance)
+        +bool Delete(string id)
+        +List~Attendance~ GetByEmployee(string employeeId)
+        +List~Attendance~ GetByDateRange(DateTime start, DateTime end)
+        +bool ClockIn(string employeeId)
+        +bool ClockOut(string employeeId)
+        -bool SaveChanges()
+    }
+
+    class LeaveService {
+        -List~Leave~ leaves
+        -FileManager fileManager
+        +LeaveService(FileManager fileManager)
+        +List~Leave~ GetAll()
+        +Leave GetById(string id)
+        +bool Add(Leave leave)
+        +bool Update(Leave leave)
+        +bool Delete(string id)
+        +List~Leave~ GetByEmployee(string employeeId)
+        +bool RequestLeave(LeaveRequest request)
+        +bool ApproveLeave(string leaveId, string approverId)
+        +bool RejectLeave(string leaveId, string approverId, string reason)
+        -bool SaveChanges()
+    }
+
+    class PayrollService {
+        -List~Payroll~ payrolls
+        -FileManager fileManager
+        +PayrollService(FileManager fileManager)
+        +List~Payroll~ GetAll()
+        +Payroll GetById(string id)
+        +bool Add(Payroll payroll)
+        +bool Update(Payroll payroll)
+        +bool Delete(string id)
+        +List~Payroll~ GetByEmployee(string employeeId)
+        +void GeneratePayroll(DateTime periodStart, DateTime periodEnd)
+        +void ProcessPayments()
+        -bool SaveChanges()
+    }
+
+    class JsonFileStorage {
+        +bool SaveData(string filename, data)
+        +LoadData(string filename)
+    }
+
+    class FileManager {
+        -IFileStorage fileStorage
+        +FileManager(IFileStorage storage)
+        +List~Employee~ LoadEmployees()
+        +bool SaveEmployees(List~Employee~ employees)
+        +List~Department~ LoadDepartments()
+        +bool SaveDepartments(List~Department~ departments)
+        +List~Attendance~ LoadAttendances()
+        +bool SaveAttendances(List~Attendance~ attendances)
+        +List~Leave~ LoadLeaves()
+        +bool SaveLeaves(List~Leave~ leaves)
+        +List~Payroll~ LoadPayrolls()
+        +bool SavePayrolls(List~Payroll~ payrolls)
+    }
+
+    %% Events and Delegates 
+    class EmployeeEventArgs {
+        +Employee Employee
+        +EmployeeEventArgs(Employee employee)
+    }
+
+    class RoleChangedEventArgs {
+        +UserRole NewRole
+        +RoleChangedEventArgs(UserRole newRole)
+    }
+
+    %% Relationships
+    Person <|-- Employee : inheritance
+    Employee <|-- FullTimeEmployee : inheritance
+    Employee <|-- ContractEmployee : inheritance
+    Employee <|-- Manager : inheritance
+    
+    Employee "1" -- "0..*" Attendance : has
+    Employee "1" -- "0..*" Leave : has
+    Employee "1" -- "0..*" Payroll : has
+    Employee "*" -- "1" Department : belongs to
+    Department "1" -- "1" Manager : managed by
+    
+    IService <|.. EmployeeService : implements
+    IService <|.. DepartmentService : implements
+    IService <|.. AttendanceService : implements
+    IService <|.. LeaveService : implements
+    IService <|.. PayrollService : implements
+    
+    IFileStorage <|.. JsonFileStorage : implements
+    
+    FileManager -- JsonFileStorage : uses
+    EmployeeService -- FileManager : uses
+    EmployeeService -- EmployeeFactory : uses
+    DepartmentService -- FileManager : uses
+    AttendanceService -- FileManager : uses
+    LeaveService -- FileManager : uses
+    PayrollService -- FileManager : uses
+    
+    HRSystemException <|-- EntityNotFoundException : inheritance
+    HRSystemException <|-- ValidationException : inheritance
+    
+    LeaveService -- LeaveRequest : processes
+    LeaveRequest -- Leave : contains
+    Manager -- LeaveRequest : approves

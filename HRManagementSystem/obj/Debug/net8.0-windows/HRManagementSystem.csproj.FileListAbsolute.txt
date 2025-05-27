@@ -1,0 +1,112 @@
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.exe
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.deps.json
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.runtimeconfig.json
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.GenerateResource.cache
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfo.cs
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\refint\HRManagementSystem.dll
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.genruntimeconfig.cache
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\ref\HRManagementSystem.dll
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.MainForm.resources
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.DashboardOverview.resources
+C:\Users\Admin\Data\Coding Projects\C & C++ & C#\HRManagementSystem\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.EmployeeManagement.resources
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.exe
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.deps.json
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.runtimeconfig.json
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.DashboardOverview.resources
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.EmployeeManagement.resources
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.MainForm.resources
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.GenerateResource.cache
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfoInputs.cache
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfo.cs
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.sourcelink.json
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\refint\HRManagementSystem.dll
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.genruntimeconfig.cache
+C:\Users\tadyuh\Coding Projects\hrms\HRManagementSystem\obj\Debug\net8.0-windows\ref\HRManagementSystem.dll
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollForm.resources
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollManagement.resources
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollReport.resources
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollSearch.resources
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\bin\Debug\net8.0-windows\itextsharp.dll
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.AssemblyReference.cache
+C:\Users\tadyuh\Coding Projects\HRMS\HRManagementSystem\obj\Debug\net8.0-windows\HRManage.2BA030BA.Up2Date
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.exe
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.deps.json
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.runtimeconfig.json
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\itextsharp.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.DashboardOverview.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.EmployeeManagement.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollForm.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollManagement.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollReport.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollSearch.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.MainForm.resources
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.GenerateResource.cache
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfoInputs.cache
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfo.cs
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.sourcelink.json
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManage.2BA030BA.Up2Date
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\refint\HRManagementSystem.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.genruntimeconfig.cache
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\ref\HRManagementSystem.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\admin\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AttendanceManagement.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.exe
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.deps.json
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.runtimeconfig.json
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\itextsharp.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.AssemblyReference.cache
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AttendanceManagement.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.DashboardOverview.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.EmployeeManagement.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollForm.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollManagement.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollReport.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.PayrollSearch.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.MainForm.resources
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.GenerateResource.cache
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.AssemblyInfo.cs
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManage.2BA030BA.Up2Date
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\refint\HRManagementSystem.dll
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.pdb
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\HRManagementSystem.genruntimeconfig.cache
+C:\Users\Hoang\Downloads\OOP---HRMS-main\HRManagementSystem\obj\Debug\net8.0-windows\ref\HRManagementSystem.dll

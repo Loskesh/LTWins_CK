@@ -1,0 +1,11 @@
+[
+  {
+    "departmentId": "DEP001",
+    "name": "troll",
+    "description": "weef",
+    "budget": 20000,
+    "managerId": "EMP007",
+    "managerName": "David Martinez",
+    "employees": []
+  }
+]
