@@ -20,7 +20,7 @@ namespace HRManagementSystem
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     string query = @"SELECT Id, EmployeeId, Name, Email, Phone, DateOfBirth, Address, 
-                            HireDate, Position, BaseSalary, DepartmentId, Status, EmployeeType,
+                            HireDate, Position, BaseSalary, DepartmentId, Status, EmployeeType ,HourlyRate, HoursWorked, AnnualBonus,
                             (SELECT Name FROM Department WHERE DepartmentId = Employee.DepartmentId) as DepartmentName
                             FROM Employee ORDER BY EmployeeId";
 
@@ -30,31 +30,75 @@ namespace HRManagementSystem
                     {
                         while (reader.Read())
                         {
-                            Employee emp = new Employee
-                            {
-                                Id = reader["Id"].ToString(),
-                                EmployeeId = reader["EmployeeId"].ToString(),
-                                Name = reader["Name"].ToString(),
-                                Email = reader["Email"].ToString(),
-                                Phone = reader["Phone"].ToString(),
-                                DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
-                                Address = reader["Address"].ToString(),
-                                HireDate = Convert.ToDateTime(reader["HireDate"]), // ✅ Đảm bảo convert đúng
-                                Position = reader["Position"].ToString(),
-                                BaseSalary = Convert.ToDecimal(reader["BaseSalary"]),
-                                DepartmentId = reader["DepartmentId"].ToString(),
-                                Status = (EmployeeStatus)Convert.ToInt32(reader["Status"]), // ✅ Convert từ int
-                                EmployeeType = reader["EmployeeType"].ToString(),
-                                DepartmentName = reader["DepartmentName"]?.ToString()
-                            };
+                            string employeeType = reader["EmployeeType"].ToString();
+                            Employee emp;
 
-                            // ✅ DEBUG: Log employee được load từ DB
-                            System.Diagnostics.Debug.WriteLine($"[DB] Loaded employee {emp.EmployeeId}:");
-                            System.Diagnostics.Debug.WriteLine($"  - HireDate from DB: {emp.HireDate}");
-                            System.Diagnostics.Debug.WriteLine($"  - Status from DB: {emp.Status} (value: {Convert.ToInt32(reader["Status"])})");
+                            if (employeeType == "Contract")
+                            {
+                                emp = new ContractEmployee
+                                {
+                                    Id = reader["Id"].ToString(),
+                                    EmployeeId = reader["EmployeeId"].ToString(),
+                                    Name = reader["Name"].ToString(),
+                                    Email = reader["Email"].ToString(),
+                                    Phone = reader["Phone"].ToString(),
+                                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
+                                    Address = reader["Address"].ToString(),
+                                    HireDate = Convert.ToDateTime(reader["HireDate"]),
+                                    Position = reader["Position"].ToString(),
+                                    BaseSalary = Convert.ToDecimal(reader["BaseSalary"]),
+                                    DepartmentId = reader["DepartmentId"].ToString(),
+                                    Status = (EmployeeStatus)Convert.ToInt32(reader["Status"]),
+                                    DepartmentName = reader["DepartmentName"]?.ToString(),
+                                    HourlyRate = reader["HourlyRate"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["HourlyRate"]),
+                                    HoursWorked = reader["HoursWorked"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["HoursWorked"])
+                                };
+                            }
+                            else if (employeeType == "FullTime")
+                            {
+                                emp = new FullTimeEmployee
+                                {
+                                    Id = reader["Id"].ToString(),
+                                    EmployeeId = reader["EmployeeId"].ToString(),
+                                    Name = reader["Name"].ToString(),
+                                    Email = reader["Email"].ToString(),
+                                    Phone = reader["Phone"].ToString(),
+                                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
+                                    Address = reader["Address"].ToString(),
+                                    HireDate = Convert.ToDateTime(reader["HireDate"]),
+                                    Position = reader["Position"].ToString(),
+                                    BaseSalary = Convert.ToDecimal(reader["BaseSalary"]),
+                                    DepartmentId = reader["DepartmentId"].ToString(),
+                                    Status = (EmployeeStatus)Convert.ToInt32(reader["Status"]),
+                                    DepartmentName = reader["DepartmentName"]?.ToString(),
+                                    AnnualBonus = reader["AnnualBonus"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AnnualBonus"])
+                                };
+                            }
+                            else
+                            {
+                                emp = new Employee
+                                {
+                                    Id = reader["Id"].ToString(),
+                                    EmployeeId = reader["EmployeeId"].ToString(),
+                                    Name = reader["Name"].ToString(),
+                                    Email = reader["Email"].ToString(),
+                                    Phone = reader["Phone"].ToString(),
+                                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
+                                    Address = reader["Address"].ToString(),
+                                    HireDate = Convert.ToDateTime(reader["HireDate"]),
+                                    Position = reader["Position"].ToString(),
+                                    BaseSalary = Convert.ToDecimal(reader["BaseSalary"]),
+                                    DepartmentId = reader["DepartmentId"].ToString(),
+                                    Status = (EmployeeStatus)Convert.ToInt32(reader["Status"]),
+                                    EmployeeType = employeeType,
+                                    DepartmentName = reader["DepartmentName"]?.ToString()
+                                };
+                            }
 
                             employees.Add(emp);
                         }
+
+
                     }
                 }
 
@@ -230,7 +274,10 @@ namespace HRManagementSystem
                             BaseSalary = @BaseSalary,
                             DepartmentId = @DepartmentId,
                             Status = @Status,
-                            EmployeeType = @EmployeeType
+                            EmployeeType = @EmployeeType,
+                            HourlyRate = @HourlyRate,
+                            HoursWorked = @HoursWorked,
+                            AnnualBonus = @AnnualBonus
                             WHERE Id = @Id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -248,6 +295,24 @@ namespace HRManagementSystem
                         cmd.Parameters.AddWithValue("@DepartmentId", entity.DepartmentId ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@Status", (int)entity.Status); // ✅ Cast to int
                         cmd.Parameters.AddWithValue("@EmployeeType", entity.EmployeeType ?? (object)DBNull.Value);
+                        if (entity is ContractEmployee contractEmp)
+                        {
+                            cmd.Parameters.AddWithValue("@HourlyRate", contractEmp.HourlyRate);
+                            cmd.Parameters.AddWithValue("@HoursWorked", contractEmp.HoursWorked);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@HourlyRate", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@HoursWorked", DBNull.Value);
+                        }
+                        if (entity is FullTimeEmployee fullTimeEmp)
+                        {
+                            cmd.Parameters.AddWithValue("@AnnualBonus", fullTimeEmp.AnnualBonus);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@AnnualBonus", DBNull.Value);
+                        }
 
                         // ✅ DEBUG: Log parameters
                         System.Diagnostics.Debug.WriteLine($"[SERVICE] SQL Parameters:");

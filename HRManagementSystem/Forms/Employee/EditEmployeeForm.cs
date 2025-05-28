@@ -669,31 +669,26 @@
                 // ✅ DEBUG: Kiểm tra giá trị từ form
                 System.Diagnostics.Debug.WriteLine($"[SAVE] Form values:");
                 System.Diagnostics.Debug.WriteLine($"  - Name from form: '{txtName?.Text}'");
-                System.Diagnostics.Debug.WriteLine($"  - HireDate from form: {dtpHireDate?.Value}");
-                System.Diagnostics.Debug.WriteLine($"  - Status from form: '{cmbStatus?.SelectedItem}'");
+
                 DateTimePicker dtpDob = Controls.Find("dtpDob", true).FirstOrDefault() as DateTimePicker;
                 TextBox txtAddress = Controls.Find("txtAddress", true).FirstOrDefault() as TextBox;
                 ComboBox cmbDepartment = Controls.Find("cmbDepartment", true).FirstOrDefault() as ComboBox;
                 TextBox txtPosition = Controls.Find("txtPosition", true).FirstOrDefault() as TextBox;
                 NumericUpDown nudSalary = Controls.Find("nudSalary", true).FirstOrDefault() as NumericUpDown;
+                ComboBox cmbStatus = Controls.Find("cmbStatus", true).FirstOrDefault() as ComboBox;
+              
+                DateTimePicker dtpHireDate = Controls.Find("dtpHireDate", true).FirstOrDefault() as DateTimePicker;
+            
+
+             
 
                 ComboBox cmbEmployeeType = Controls.Find("cmbEmployeeType", true).FirstOrDefault() as ComboBox;
                 string selectedType = cmbEmployeeType?.SelectedItem?.ToString() ?? "Regular";
 
-                Employee updatedEmployee;
-
-                if (_employee.EmployeeType != selectedType)
-                {
-                    System.Diagnostics.Debug.WriteLine($"[SAVE] Converting from {_employee.EmployeeType} to {selectedType}");
-                    updatedEmployee = _employeeFactory.CreateEmployee(selectedType);
-                    updatedEmployee.Id = _employee.Id;
-                    updatedEmployee.EmployeeId = _employee.EmployeeId;
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"[SAVE] Updating existing {_employee.EmployeeType} employee");
-                    updatedEmployee = _employee;
-                }
+                // Create a new employee using the factory
+                Employee updatedEmployee = _employeeFactory.CreateEmployee(selectedType);
+                updatedEmployee.Id = _employee.Id; // Retain the same ID for updates
+                updatedEmployee.EmployeeId = _employee.EmployeeId; // Retain the same EmployeeId for updates
 
                 updatedEmployee.Name = txtName?.Text ?? "";
                 System.Diagnostics.Debug.WriteLine($"[SAVE] Name updated to: '{updatedEmployee.Name}'");
@@ -703,7 +698,15 @@
                 updatedEmployee.Address = txtAddress?.Text ?? "";
                 updatedEmployee.Position = txtPosition?.Text ?? "";
                 updatedEmployee.BaseSalary = nudSalary?.Value ?? 0;
-
+                if (cmbStatus?.SelectedItem != null && Enum.TryParse(cmbStatus.SelectedItem.ToString(), out EmployeeStatus status))
+                {
+                    updatedEmployee.Status = status;
+                }
+                if (cmbDepartment?.SelectedItem is DepartmentItem selectedDept)
+                {
+                    updatedEmployee.DepartmentId = selectedDept.Department.DepartmentId;
+                    updatedEmployee.DepartmentName = selectedDept.Department.Name;
+                }
                 // ✅ SỬA: Date handling với validation
                 if (dtpDob != null)
                 {
@@ -728,29 +731,10 @@
                     System.Diagnostics.Debug.WriteLine($"[SAVE] DateOfBirth validated and set to: {dobValue}");
                 }
 
-                if (dtpHireDate != null)
-                {
-                    DateTime hireDateValue = dtpHireDate.Value;
+               
 
-                    // Kiểm tra HireDate hợp lệ
-                    if (hireDateValue < new DateTime(1900, 1, 1))
-                    {
-                        MessageBox.Show("Hire Date cannot be before year 1900.", "Invalid Date",
-                                       MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    if (hireDateValue > DateTime.Today.AddYears(1))
-                    {
-                        MessageBox.Show("Hire Date cannot be more than 1 year in the future.", "Invalid Date",
-                                       MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    updatedEmployee.HireDate = hireDateValue;
-                    System.Diagnostics.Debug.WriteLine($"[SAVE] HireDate validated and set to: {hireDateValue}");
-                }
-
+                    updatedEmployee.HireDate = dtpHireDate?.Value ?? DateTime.Now;
+                   
                 // Handle type-specific properties
                 if (updatedEmployee is FullTimeEmployee fullTimeEmployee)
                 {

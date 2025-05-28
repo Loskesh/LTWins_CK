@@ -12,13 +12,12 @@
         private EmployeeService _employeeService;
         private List<Department> _departments;
         private List<Employee> _employees;
-        private FileManager _fileManager;
+      
 
         public DepartmentManagement()
         {
             InitializeComponent();
-            // Initialize FileManager with JsonFileStorage
-            _fileManager = new FileManager(new JsonFileStorage());
+          
 
             // Initialize services with FileManager to ensure data persistence
             _departmentService = new DepartmentService(KetNoi.str);

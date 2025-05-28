@@ -530,7 +530,7 @@ namespace HRManagementSystem
                         System.Diagnostics.Debug.WriteLine($"[EDIT] Current: HireDate={selectedEmployee.HireDate}, Status={selectedEmployee.Status}");
 
                         System.Diagnostics.Debug.WriteLine($"[EDIT] Opening edit form for: {selectedEmployee.Name} (ID: {selectedEmployee.Id})");
-
+                  
                         EditEmployeeForm editForm = new EditEmployeeForm(selectedEmployee, departments, false);
                         DialogResult result = editForm.ShowDialog();
 
@@ -554,9 +554,9 @@ namespace HRManagementSystem
 
                                 try
                                 {
-                                    JsonFileStorage storage = new JsonFileStorage();
+                                   
                                     List<Employee> updatedEmployees = employeeService.GetAll();
-                                    storage.SaveData(FileManager.employeeDataPath, updatedEmployees);
+                                   
                                     System.Diagnostics.Debug.WriteLine($"[EDIT] JSON backup saved");
                                 }
                                 catch (Exception jsonEx)
@@ -619,9 +619,9 @@ namespace HRManagementSystem
                                 // ✅ OPTIONAL: Force save to JSON
                                 try
                                 {
-                                    JsonFileStorage storage = new JsonFileStorage();
+                                 
                                     List<Employee> updatedEmployees = employeeService.GetAll();
-                                    storage.SaveData(FileManager.employeeDataPath, updatedEmployees);
+                                 
                                     System.Diagnostics.Debug.WriteLine($"[DELETE] JSON backup updated");
                                 }
                                 catch (Exception jsonEx)

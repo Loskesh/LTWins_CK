@@ -454,27 +454,8 @@ namespace HRManagementSystem
                 lblUserName.Text = currentEmployee.Name;
                 lblUserTitle.Text = currentEmployee.Position;
 
-                // Try to load a profile picture based on employee ID
-                string picturePath = Path.Combine(FileManager.projectDirectory, $"ProfilePictures\\{currentEmployee.EmployeeId}.png");
-                if (File.Exists(picturePath))
-                {
-                    if (profilePicture.Image != null)
-                    {
-                        profilePicture.Image.Dispose();
-                    }
-                    profilePicture.Image = Image.FromFile(picturePath);
-                }
-                else
-                {
-                    // Create an initial-based avatar
-                    if (profilePicture.Image != null)
-                    {
-                        profilePicture.Image.Dispose();
-                    }
-                    Bitmap avatarBitmap = CreateInitialsAvatar(currentEmployee.Name);
-                    profilePicture.Image = avatarBitmap;
-                }
-
+              
+                
                 // Populate personal information
                 Label? nameValueLabel = personalInfoPanel.Controls.Find("lblNameValue", true).FirstOrDefault() as Label;
                 if (nameValueLabel != null)

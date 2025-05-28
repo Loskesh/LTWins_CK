@@ -112,17 +112,9 @@ namespace HRManagementSystem
         {
             try
             {
-                string payrollDataPath = FileManager.payrollDataPath;
-
-                if (File.Exists(payrollDataPath))
-                {
-                    string jsonData = File.ReadAllText(payrollDataPath);
-                    _payrolls = JsonSerializer.Deserialize<List<Payroll>>(jsonData) ?? new List<Payroll>();
-                }
-                else
-                {
+              
                     _payrolls = new List<Payroll>();
-                }
+               
 
                 foreach (Payroll payroll in _payrolls)
                 {
